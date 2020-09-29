@@ -2,6 +2,9 @@
 
 # https://realpython.com/sorting-algorithms-python/
 
+from random import randint  # getting random integers
+from timeit import repeat   # getting actual time it takes to run sorting algorithims
+
 # 100 numbers, duplicates allowed, unsorted. https://numbergenerator.org/
 array1 = [98,20,79,4,50,78,52,89,60,14,9,34,4,12,21,55,54,85,69,31,24,
           34,91,81,30,70,49,20,20,9,41,58,47,18,76,43,71,94,13,83,63,18,
@@ -42,4 +45,29 @@ array1 = [98,20,79,4,50,78,52,89,60,14,9,34,4,12,21,55,54,85,69,31,24,
           51,19,15,38,14,81,63,19,45,66,79,52,71,28,49,12,19,45,25,67,44,26,36,55,87,81,18,82,82,81,
           61,29,20,18,77,38,98,21,79,85,40,59,95,66,18,90,41,5,36,42,64]
 
-print (sorted(array1)) # python auto sort. small to big
+#print (sorted(array1)) # python auto sort. small to big
+
+def run_sorting_algorithm(algorithm, array):
+
+    # Set up the context and prepare the call to the specified
+    # algorithm using the supplied array. Only import the
+    # algorithm function if it's not the built-in `sorted()`.
+    setup_code = f"from __main__ import {algorithm}" \
+        if algorithm != "sorted" else ""
+    stmt = f"{algorithm}({array})"
+
+    # Execute the code ten different times and return the time
+    # in seconds that each execution took
+    times = repeat(setup=setup_code, stmt=stmt, repeat=3, number=10)
+
+    # Finally, display the name of the algorithm and the
+    # minimum time it took to run
+    print(f"Algorithm: {algorithm}. Minimum execution time: {min(times)}")
+
+array_length = 10000
+
+if __name__ == "__main__":
+    array = [randint(0, 1000) for i in range(array_length)]
+    
+    run_sorting_algorithm(algorithm="sorted", array=array)
+
