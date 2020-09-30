@@ -8,18 +8,28 @@ import random # random module
 #     y = random.randint(0,9) # inclusive
 #     print("Generation ", x, ": ", y)
 
+manual_min = -1
+manual_max = 123456789
+
 int_min = 0
 int_max = 100 
 number_of_elements = 10000
+total_elements = 0
 
 ## File write
 fileName = "pre_sort.txt"
 fileOpen = open(fileName, "w") # write only - overwritten 
 
 ## Integer generator
-for x in range(0, number_of_elements):
+for x in range(0, number_of_elements - 1):
     num1 = random.randint(int_min, int_max) # inclusive
     fileOpen.write(str(num1) + "\n")
+# Last line will be there to confirm how many elements there are. 
+fileOpen.write(str(number_of_elements))
+
+# MANUAL Input - manually insert smallest and largest values. 
+#fileOpen.write(str(manual_min))
+#fileOpen.write(str(manual_max))
 
 ## Float generator
 
