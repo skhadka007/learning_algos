@@ -1,24 +1,55 @@
 ## Santosh Khadka - Tic Tac Toe Game
 
+## Globals
+game_reset = 0
+player = 'a'
+row1 = ['-', '-', '-']
+row2 = ['-', '-', '-']
+row3 = ['-', '-', '-']
+    
 def end_Game():
     print()
     print("Exiting... Thanks for playing, bye!")
     quit()
 
 def end_options():
-    pass
+    x = 0
+    while x==0: 
+        choice = str(input("Enter 1 to play again or 2 to exit: ").strip())
+        if (choice == '1'):
+            print("You chose to play again.. resetting game!")
+            return choice
+        elif (choice == '2'):
+            print("You chose to exit game.")
+            end_Game()
+        else:
+            print("Invalid input, try again!")
+    
 
 def check_input(location):
     if str(location).lower == "exit":
         end_Game()
 
 def check_ifEmpty(location):
-    pass 
+    location = str(location)
+    row = int(location[0])
+    column = int(location[1])
+    if (row == 1):
+        if str(row1[column]) != '-':
+            return 'notempty'
+    elif (row == 2):
+        if str(row2[column]) != '-':
+            return 'notempty'
+    elif (row == 3):
+        if str(row3[column]) != '-':
+            return 'notempty'
+    return 'empty' 
 
 def check_ifWin():
     pass
 
 def new_game():
+    global player
     print("===============================")
     print('    Lets play Tic-Tac-Toe!')
     print("===============================")
@@ -30,6 +61,7 @@ def new_game():
         if (choice == 'x') or (choice == 'X') or (choice == 'o') or (choice == 'O'):
             print()
             print("You choose", choice.upper(), ", great! Lets start:")
+            player = choice.upper() 
             return choice.upper()
         elif(str(choice).upper() == "EXIT"):
             end_Game()
@@ -38,7 +70,18 @@ def new_game():
     
 
 def update_board(location):
-    pass
+    global player
+    location = str(location)
+    row = int(location[0])
+    column = int(location[1])
+    if (row == 1):
+        row1[column] = player
+    elif (row == 2):
+        row2[column] = player
+    elif (row == 3):
+        row1[column] = player
+    else:
+        print("ERROR UPDATING BOARD")
 
 def get_input():
     x = 0
@@ -57,9 +100,11 @@ def get_input():
     return location
 
 def start_game():
-    new_game()
-    location = get_input()
+    #new_game()
+    #location = get_input()
+    end_options()
     #print(len(str(123)))
+
 def main():
     start_game()
 
