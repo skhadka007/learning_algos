@@ -1,0 +1,16 @@
+Package search:
+	python package for _______
+
+Creating Your Own:
+	Modules are just .py scripts that you call in another .py script.
+	Packages are a collection of modules
+
+	- Create a folder with the package name
+	- Inside the folder create a SubPackage folder
+	- add/create __init__.py file inside package folder
+	- add/create __init__.py file inside sub package folder
+	- add modules/.py files inside the folders
+	- Header to import from main package
+		from MyMainPackage import script1
+- 	- Header to import from sub package (folder(s) inside main package)
+		from MyMainPackage.SubPackage import subScript1
