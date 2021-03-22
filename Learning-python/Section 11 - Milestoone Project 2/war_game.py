@@ -20,11 +20,11 @@ class Card:
         return self.rank + " of " + self.suit
 # Testing Class
 # two_hearts = Card("Hearts", "Two")
-three_clubs = Card("Clubs", "Three")
-print(three_clubs.value)
+# three_clubs = Card("Clubs", "Three")
+# print(three_clubs.value)
 # print(values[two_hearts.rank])
 
-class Deck():
+class Deck(): 
     '''
     Instantiate a new deck.
         - Create all 52 Card objects.
@@ -38,14 +38,16 @@ class Deck():
     def __init__(self): # No user input because every new deck will be the same
         # All 52 cards
         self.all_cards = []
-
         for suit in suits:
             for rank in ranks:
                 # Create the Card object
                 created_card = Card(suit, rank)
                 self.all_cards.append(created_card)
-#new_deck = Deck()
-#first_card = new_deck.all_cards[0]
-#print(first_card)
+
+    def shuffle(self):
+        pass
+new_deck = Deck()
+first_card = new_deck.all_cards[0]
+print(first_card)
 
 print("END TEST")
