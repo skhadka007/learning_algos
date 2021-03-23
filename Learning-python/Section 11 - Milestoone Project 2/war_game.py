@@ -9,7 +9,8 @@ values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8,
 
 class Card:
     '''
-    Card: Suit, rank, value
+    Instantiate a card.
+        Card: Suit, rank, value
     '''
     def __init__(self, suit, rank):
         self.suit = suit
@@ -18,11 +19,6 @@ class Card:
     
     def __str__(self):
         return self.rank + " of " + self.suit
-# Testing Class
-# two_hearts = Card("Hearts", "Two")
-# three_clubs = Card("Clubs", "Three")
-# print(three_clubs.value)
-# print(values[two_hearts.rank])
 
 class Deck(): 
     '''
@@ -45,9 +41,41 @@ class Deck():
                 self.all_cards.append(created_card)
 
     def shuffle(self):
-        pass
-new_deck = Deck()
-first_card = new_deck.all_cards[0]
-print(first_card)
+        random.shuffle(self.all_cards) # shuffles the dictionary around
 
-print("END TEST")
+    def deal_one(self):
+        # Because we 'deal one card' were techincally removing it from the list of all_cards -> pop
+        # The pop() method removes the item at the given index from the list and returns the removed item.
+        # argument passed to method is optional. Default index -1 is passed as an argument (index of the last item).
+        return self.all_cards.pop()
+
+class Player:
+    '''
+    Instantiate a player.
+        - Hold instances of Cards.
+        - Add and remove cards from hand.
+        - Flexible: add one or many cards.
+    '''
+    def __init__(self, name):
+        self.name = name
+        self.all_cards = [] # new player has no cards
+    
+    def remove_one(self):
+        # Use pop to remove
+        return self.all_cards.pop()
+
+    def add_cards(self, new_cards):
+        if type(new_cards) == type([]):
+            self.all_cards.extend(new_cards)
+        else:
+            self.all_cards.append(new_cards)
+
+    def __str__(self):
+        string1 = "Player " + str(self.name) + " has " + str(len(self.all_cards)) + " card(s)."
+        return string1
+
+def main():
+    pass
+    
+if __name__ == "__main__":
+    main()
