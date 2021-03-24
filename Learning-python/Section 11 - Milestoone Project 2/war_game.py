@@ -1,12 +1,14 @@
 ## Santosh Khadka
 ## Python - Warmup Card Game Project
 import random
+import pdb
 
 suits = {"Hearts", "Diamonds", "Spades", "Clubs"}
 ranks = {"Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"}
 # Dictionary for deck
 values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 'Nine':9, 'Ten':10, 'Jack':11, 'Queen':12, 'King':13, 'Ace':14}
 
+## CLASSES
 class Card:
     '''
     Instantiate a card.
@@ -74,8 +76,49 @@ class Player:
         string1 = "Player " + str(self.name) + " has " + str(len(self.all_cards)) + " card(s)."
         return string1
 
+## LOGIC
+def logic_new_game():
+    # New players
+    global player_one
+    global player_two
+    player_one = Player("One")
+    player_two = Player("Two")
+    
+    # New deck
+    new_deck = Deck()
+    new_deck.shuffle()
+
+    # Splitting deck between 2 players
+    deck_half = int(len(new_deck.all_cards)/2)
+    for x in range(deck_half):
+        player_one.add_cards(new_deck.deal_one())
+        player_two.add_cards(new_deck.deal_one())
+    
+    #print(len(player_one.all_cards))
+    #print(len(player_two.all_cards))
+
 def main():
-    pass
+    logic_new_game()
+
+    global player_one
+    global player_two
+
+    game_on = True
+    round_num = 0
+
+    while game_on:
+
+        round_num += 1
+        print("Round: ", round_num)
+
+        # Out of cards check
+        if len(player_one.all_cards) == 0:
+                print("Player One out of cards! Game Over!")
+                print("Player Two Wins!")
+                game_on = False
+                break
+        
+        break # for testing
     
 if __name__ == "__main__":
     main()
