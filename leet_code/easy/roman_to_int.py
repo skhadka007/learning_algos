@@ -84,7 +84,7 @@ def romanToInt_v1(s):   # WORKS #################################
     s = s+"A"
     n = 0
     value = 0
-    for x in s[n:]:
+    for x in s:
         # print(s[n])
         if s[n] == "A":
             return value
