@@ -68,7 +68,7 @@ class Player:
 
     def add_cards(self, new_cards):
         if type(new_cards) == type([]):
-            self.all_cards.extend(new_cards)
+            self.all_cards.extend(new_cards) # adds one list to another - 'extends'
         else:
             self.all_cards.append(new_cards)
 
@@ -98,27 +98,75 @@ def logic_new_game():
     #print(len(player_two.all_cards))
 
 def main():
-    logic_new_game()
-
     global player_one
     global player_two
+    
+    # Playing the game
+    logic_new_game()
 
     game_on = True
     round_num = 0
 
     while game_on:
-
         round_num += 1
         print("Round: ", round_num)
 
         # Out of cards check
         if len(player_one.all_cards) == 0:
-                print("Player One out of cards! Game Over!")
-                print("Player Two Wins!")
-                game_on = False
-                break
+            print("Player One out of cards! Game Over!")
+            print("Player Two Wins!")
+            game_on = False
+            break
+
+        if len(player_two.all_cards) == 0:
+            print("Player Two is out of cards! Game over!")
+            print("Player One Wins!")
+            game_on = False
+            break
+            # IF neither == 0; then continue
+
+        # NEW ROUND
+        player_one_cards = []
+        player_one_cards.append(player_one.remove_one)
         
-        break # for testing
+        player_two_cards = []
+        player_two_cards.append(player_two.remove_one)
+
+        at_war = True
+
+        while at_war == True:
+            
+            if player_one_cards[-1].value > player_two_cards[-1].value: # [-1] represents the last value
+                # Give cards to player one - since P1 has the bigger card
+                player_one.add_cards(player_one_cards) # adds the entire list of p1's cards
+                player_two.add_cards(player_one_cards)
+
+                at_war == False # no war -> next round
+            elif player_one_cards[-1].value < player_two_cards[-1].value:
+                player_two.add_cards(player_one_cards)
+                player_two.add_cards(player_one_cards)
+
+                at_war == False # no war -> next round
+
+            # Cards are equal
+            else:
+                print("WAR TIME!!")
+
+                if len(player_one.all_cards) < 5:
+                    print("Player ONE is unable to play war! Game over!")
+                    print("Player TWO wins!")
+                    game_on = False # end game
+                    break
+                elif len(player_two.all_cards) < 5:
+                    print("Player TWO is unable to play war! Game over!")
+                    print("Player ONE wins!")
+                    game_on = False # end game
+                    break
+                else:
+                    for num in range(5):
+                        player_one_cards.append(player_one.remove_one())
+                        player_two_cards.append(player_two.remove_one())
+        # break # for testing
     
 if __name__ == "__main__":
     main()
