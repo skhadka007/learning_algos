@@ -76,8 +76,32 @@ class Player:
         string1 = "Player " + str(self.name) + " has " + str(len(self.all_cards)) + " card(s)."
         return string1
 
-## LOGIC
-def logic_new_game():
+# globals
+player_one = Player("One")
+player_two = Player("Two")
+
+# ## LOGIC
+# def logic_new_game():
+#     # New players
+#     global player_one
+#     global player_two
+#     player_one = Player("One")
+#     player_two = Player("Two")
+    
+#     # New deck
+#     new_deck = Deck()
+#     new_deck.shuffle()
+
+#     # Splitting deck between 2 players
+#     deck_half = int(len(new_deck.all_cards)/2)
+#     for x in range(deck_half):
+#         player_one.add_cards(new_deck.deal_one())
+#         player_two.add_cards(new_deck.deal_one())
+    
+#     #print(len(player_one.all_cards))
+#     #print(len(player_two.all_cards))
+
+def main():
     # New players
     global player_one
     global player_two
@@ -96,13 +120,6 @@ def logic_new_game():
     
     #print(len(player_one.all_cards))
     #print(len(player_two.all_cards))
-
-def main():
-    global player_one
-    global player_two
-    
-    # Playing the game
-    logic_new_game()
 
     game_on = True
     round_num = 0
@@ -133,6 +150,9 @@ def main():
         player_two_cards.append(player_two.remove_one)
 
         at_war = True
+
+        print(player_one_cards[-1])
+        # break
 
         while at_war == True:
             

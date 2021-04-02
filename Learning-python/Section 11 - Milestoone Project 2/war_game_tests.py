@@ -44,7 +44,8 @@ def test_player():
 
 def main():
     deck_1 = war_game.Deck()
-    test_player()
+    # test_player()
+    test_card()
     
 if __name__ == "__main__":
     main()
