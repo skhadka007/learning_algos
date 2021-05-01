@@ -3,4 +3,6 @@
 import blackjack
 
 def main():
-    pass
+    print (10 + -20)
+
+main()
