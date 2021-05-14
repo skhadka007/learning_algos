@@ -184,7 +184,7 @@ def main():
         print("Dealers Card:", x, ", Value:", x.value)        # 1st dealer card
         temp = 1
       else:
-        print("Dealers Card: X")               # 2nd dealer card - not shown to player
+        print("Dealers Card: ??")               # 2nd dealer card - not shown to player
       player_dealer_cardValue += x.value # Add up total value of current cards 
     
     print("")
