@@ -206,6 +206,8 @@ def main():
           break
           # quit()
       elif choice_1 == "CALL":
+        for x in player_one_cards:
+          player_one_cardValue += x.value # Add up total value of current cards
         print("Player has decided to CALL.\n")
         break
       else:
@@ -245,7 +247,7 @@ def main():
       player_one.money += money_pot*2
       print("Player Money:", player_one.money)
     elif player_one_cardValue < player_dealer_cardValue:
-      print("Player has:,", player_one_cardValue, " Dealer has:", player_dealer_cardValue)
+      print("Player has:", player_one_cardValue, " Dealer has:", player_dealer_cardValue)
       print("Player 1 has lost!")
       print("Better luck next time!\n")
       print("Player Money:", player_one.money)
