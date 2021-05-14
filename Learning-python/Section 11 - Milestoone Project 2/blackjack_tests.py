@@ -3,6 +3,9 @@
 import blackjack
 
 def main():
-    print (10 + -20)
+    x = str(type(500.00))
+    print(x)
+
+    print("<class 'float'>" == x)
 
 main()
