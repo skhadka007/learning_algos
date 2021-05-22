@@ -9,7 +9,8 @@ class Snake:
     def __init__(self, parent_screen):
         self.parent_screen = parent_screen 
         self.apple = pygame.image.load("resources/apple.png").convert()
-        self.apple_x = 100; apple_y = 100
+        self.apple_x = 100
+        self.apple_y = 100
     
     def draw(self): 
         self.surface.fill((91, 25, 84))  # without this the previous screen will stay - images on top of each other
@@ -34,6 +35,8 @@ class Game:
         pygame.init()
         self.surface = pygame.display.set_mode((500, 500)) # size of the window: (Width,Height)
         self.surface.fill((255, 255, 255))    # background colors - rgb values 
+        self.snake = Snake(self.surface)
+        self.snake.draw()
     
     def run(self):
         running = True
@@ -55,7 +58,6 @@ class Game:
                     running = False
 
 if __name__ == "__main__":
-
     game = Game()
     game.run()
 
