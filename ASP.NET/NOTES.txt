@@ -34,7 +34,16 @@
 
 	~ User -><- Router -><- Controller -><- Model -><- Database(SQL code)
 		- Called everytime you click something on the website.
+
 > Database Setup
+	- ORM: Object Relation Mapper: Ex) Between a class and a table
+		- More automated. Allows the computer to generate database tables based on classes defined in the application. 
+		- Database updated using migrations
+		- Don't really need to use SQL statements. 
+		- Entity Framework is Microsofts ORM
+		- Simple for basic applications
+	- Data Access Object (DAO) vs. ORM
+		- DAO is manual creation of tables, write own SQL statements, Preferred by Database managers (DBA's), more visibility in finding problems
 
 > Registration, Login and Security
 
