@@ -12,8 +12,28 @@
 	- Can be combined with poplular front-end services
 		- React, Angular, Vue
 		- Mobile Apps
-> Models Views and Controllers (MVC)
 
+> Models Views and Controllers (MVC)
+	- Model = Classes (objects)
+	- View = web page (Razor HTML)
+	- Controller = connects models, business logic, and web pages. 
+	- MVC design pattern helps to enforce separation of concerns to help you avoid mixing presentation logic, business logic, and data access logic together.
+		- File sizes are smaller, code is modulr, can be run and managed by multiple people.
+
+	- Model: Manages the behavior and data. Class.
+		- Always data related
+		- Consists of classes/objects with properties
+		- Uses SQL statements
+		- Supplies the controller with lists of objects
+	- Views: manages the display of data
+		- HTML CSS code (or similar)
+		- Usually gets a list of data from the controller
+		- Dynamically combines data with HTML in a template
+		- Razor (ASP.NET)
+	- Controller: handles page events and navigation between pages.
+
+	~ User -><- Router -><- Controller -><- Model -><- Database(SQL code)
+		- Called everytime you click something on the website.
 > Database Setup
 
 > Registration, Login and Security
