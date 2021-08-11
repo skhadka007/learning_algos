@@ -1,0 +1,21 @@
+> What is ASP.NET Core?
+	- ASP.NET is a framework using C#
+	- Microsoft C# tool to build web applications
+	- Competitors: Java Spring, PHP Laravel, Python Flask, Node.js Express
+	- .NET - Microsofts SDE since 2001 - similar to Java Virtual Machine - runtime enviornment to run programs on multiple platforms
+	- ASP = Active Server Pages
+	- Core - Open source, cross-platform version of asp
+	- .NET 5 - unified platform from Microsof	t
+	- C# used in .NET - .NET framework consists of runtime engine and libraries for executing programs
+		- .NET also supports 20 other languages(including python) but C# is the most popular
+	- ASP.NET Core is FULL STACK - Database, Business Logic, HTML
+	- Can be combined with poplular front-end services
+		- React, Angular, Vue
+		- Mobile Apps
+> Models Views and Controllers (MVC)
+
+> Database Setup
+
+> Registration, Login and Security
+
+> Search the database

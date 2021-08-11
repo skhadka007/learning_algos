@@ -1,0 +1,17 @@
+> New project
+	- Visual Studio 2019
+		- Create a new project
+			- Language: C#, Platform: Windows, Project Type: Web
+				- ASP.NET Core Web Application
+					- Choose project name and location. Check "Place solution...same directory".
+					- Web Application (Model-View-Controller)
+					- Authentication (Use so it's already done for you)
+						- Individual User Accounts
+ 
+> Toolbars
+	- View Menu
+		~ SQL Server Object Explorer
+
+> Start/Run
+	- |> IIS Express - Will launch and compile everything.
+		- Will run in default browser.
