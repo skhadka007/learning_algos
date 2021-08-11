@@ -1,6 +1,8 @@
 # Santosh Khadka
 # Section 12 - Python Decorators
 
+######################################################################################################
+# learning the logic/behind the scene
 def func1():
     # print("hello")
     return "hello"
@@ -41,7 +43,10 @@ def new_decorator(a_function):
         print("code after the original function")
     return wrap_func
 
-def main():
+def needs_decorator(a_func):
+    print("I need decoration")
+
+def main_test(): 
     func1()
     # print(func1)
     x = func1()
@@ -54,7 +59,24 @@ def main():
     # new_func = hello()
     # new_func()
     # print(new_func())
-    more(test1) # will not work with 'test()' - want to pass in the FUNCTION not the STRING
+    # more(test1) # will not work with 'test()' - want to pass in the FUNCTION not the STRING
+
+######################################################################################################
+## DECORATOR 
+def decorate_func(some_func):
+    def wrap_func():
+        print("Code before func")
+        some_func()
+        print("Code after func")
+    return wrap_func    
+
+@decorate_func  ## DECORATOR: '@decorate_func' means run this func through 'function_name' everytime this func is called
+def decorate_me():
+    print("This function needs decorating!")
+                ## to turn off just comment out line with '@decorate_fun'
+
+def main():
+    decorate_me()
 
 if __name__ == '__main__':
     main()
