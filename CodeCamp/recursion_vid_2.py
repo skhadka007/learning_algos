@@ -65,7 +65,17 @@ Divide & Conquer - Use of Recursion
 
 #```````````````````````````````````````````````````````````````````````````````````````
 # Fibonacci (Non-Optimized)
+# F(n) = F (n-1) + F (n-2); F(0) = 0 F(1) = 1
 
+def fibonacci(num):
+    if (num == 1 or num == 0):
+        return num
+    else:
+        return fibonacci(num-1) + fibonacci(num-2) # according to the formula
 
+print(fibonacci(1))     # 1
+print(fibonacci(4))     # 3
+print(fibonacci(8))     # 21
+print(fibonacci(12))    #144
 
 #```````````````````````````````````````````````````````````````````````````````````````
