@@ -67,15 +67,33 @@ Divide & Conquer - Use of Recursion
 # Fibonacci (Non-Optimized)
 # F(n) = F (n-1) + F (n-2); F(0) = 0 F(1) = 1
 
-def fibonacci(num):
-    if (num == 1 or num == 0):
-        return num
-    else:
-        return fibonacci(num-1) + fibonacci(num-2) # according to the formula
+# def fibonacci(num):
+#     if (num == 1 or num == 0):
+#         return num
+#     else:
+#         return fibonacci(num-1) + fibonacci(num-2) # according to the formula
 
-print(fibonacci(1))     # 1
-print(fibonacci(4))     # 3
-print(fibonacci(8))     # 21
-print(fibonacci(12))    #144
+# print(fibonacci(1))     # 1
+# print(fibonacci(4))     # 3
+# print(fibonacci(8))     # 21
+# print(fibonacci(12))    #144
+
+#```````````````````````````````````````````````````````````````````````````````````````
+
+#```````````````````````````````````````````````````````````````````````````````````````
+# Merge Sort
+
+from _typeshed import Self, StrPath
+
+
+mergeSortArray = [-12, -122, -5, -1, 0 , 1, 2, 5, 7 , 9, 23]
+
+class MergeSort():
+    def __init__(self, data):
+        self.data = data
+        self.start = 0
+        self.end = len(data)-1
+
+
 
 #```````````````````````````````````````````````````````````````````````````````````````
