@@ -13,7 +13,8 @@
 #         biggest = i
 # print(biggest)
 
-racecar = "racecar"
-print(racecar[1:len(racecar)-1])
-print(racecar[1:-1])
+# racecar = "racecar"
+# print(racecar[1:len(racecar)-1])
+# print(racecar[1:-1])
 
+print(21%2)
