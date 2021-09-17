@@ -1,0 +1,9 @@
+Install NodeJS from wesbite.
+
+Install Expo:
+	$ npm install --global expo-cli
+
+Version Check:
+	$ npm -v
+	$ node -v
+	$ 

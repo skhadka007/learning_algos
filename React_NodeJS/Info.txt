@@ -1,0 +1,19 @@
+React Native - Allows for the same code base to be used on iOS and Android.
+
+Tools: 
+- Expo: expo.io
+- React Native
+- Redux
+- Firebase
+
+> Instagram Clone
+	- Basic features
+	- Post images
+	- See feed
+	- Search for users
+	- See your own profile
+
+Can use React Native Clean or Expo
+	- Expo: Fast and simple, Android Studio/Xcode are not needed, hot updates to deployed app, dev friendly, simple project structure.
+	- Clean: Can choose version to use, native modules in native languages, full control over project, smaller app size, more only documentation. 
+
