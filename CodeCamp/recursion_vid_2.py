@@ -83,16 +83,50 @@ Divide & Conquer - Use of Recursion
 #```````````````````````````````````````````````````````````````````````````````````````
 # Merge Sort
 
-from _typeshed import Self, StrPath
+# class MergeSort():
+#     def __init__(self, data):
+#         self.data = data
+#         self.start = data[0]
+#         self.end = len(data)-1
+#         self.mid = len(data) // 2   # middle of the array
+    
+def mergeSort(data):
+    if len(data) > 1:
+        start = data[0]
+        end = data[-1]
+        mid = len(data) // 2
+        
+        leftSide = data[:mid]
+        rightSide = data[mid:]
 
+        mergeSort(leftSide) # recursivley gets smaller by half
+        mergeSort(rightSide)
+        
+        x = 0; y = 0; z = 0;
+        
+        while x < len(leftSide) and y < len(rightSide):
+            if leftSide[x] < rightSide[y]:  # comparing the two side (left&right) to find smaller num
+                data[z] = leftSide[x]
+                x += 1
+            else:
+                data[z] = rightSide[y]
+                y += 1
+            z += 1
 
-mergeSortArray = [-12, -122, -5, -1, 0 , 1, 2, 5, 7 , 9, 23]
+        while x < len(leftSide):
+            data[z] = leftSide[x]
+            x += 1
+            z += 1
+        while y < len(rightSide):
+            data[z] = rightSide[y]
+            y += 1
+            z += 1
 
-class MergeSort():
-    def __init__(self, data):
-        self.data = data
-        self.start = 0
-        self.end = len(data)-1
+mergeSortArray = [-12, 122, 0, -5, -1, 3, 1, -2, 5, 7 , -9, 23] # 12 elements
+print(mergeSortArray)
+mergeSort(mergeSortArray)
+print(mergeSortArray)
+            
 
 
 
