@@ -52,7 +52,20 @@ def main():
     
     for num in simple_gen(5):
         print(num)
-    print(simple_gen(5))     
+    print(simple_gen(5))    # output: <generator object simple_gen at 0x000002519530DA50>
+    
+    # Other method to get data from yield:
+    g = simple_gen(3)
+    print(next(g))  # output: 10
+    print(next(g))  # 11
+    print(next(g))  # 12
+    # print(next(g))  # Error: StopIteration - because it couldn't yield anymore values
+    
+    # Turn variable into iterator - something that next() can be used on
+    s = "hello"
+    s_iter = iter(s)
+    print(next(s_iter)) # Output: h
+    print(next(s_iter)) # e
         
 
 if __name__ == "__main__":
