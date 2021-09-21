@@ -32,5 +32,17 @@ NOTE: The os module provides 3 methods for deleting files:
     send2trash: pip install send2trash     
 '''
 # print('Before delete:   ', os.listdir())
-# send2trash.send2trash('practice.txt')
+# send2trash.send2trash('practice.txt')     # can put the entire path or just the file name if in the same directory.
 # print('After delete:    ', os.listdir())
+
+## Looks in given file path and outputs the name of all sub-folders and files in them
+## Can add in logic to find only folders/files you're looking for. Ex date, id, etc.
+file_path = "C:\\Users\\PC-SK\\Desktop\\GIT_STUFF\\MINE\\learning_algos\\Learning-python\\Section 14 - Advanced Python Modules\\start"
+for folder, sub_folders, files in os.walk(file_path):
+    print(f"\nCurrently looking at {folder}")
+    print('Subfolders are: ')
+    for folder in sub_folders:
+        print(f"Sub-folder: {folder}")
+    print("The files are: ")
+    for items in files:
+        print(f"File: {items}")
