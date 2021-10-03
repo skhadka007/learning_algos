@@ -29,3 +29,25 @@ Numpy library used for heavy math usuage. Ifficient and deeper than just the mat
 # print(math.degrees(math.pi/2))
 # print(math.radians(180))
 
+import random
+
+# print(random.randint(0, 100))   # inclusive
+random.seed(101)                # what random seed to use - so although 'random' will give the same numbers within that seed. 
+
+## Random list
+myRandList = list(range(0,20)) # non randomized list
+print(myRandList)
+# print(random.choice(myRandList))    # get random value from myRandList
+# SAMPLE with replacement - can pick the same number more than once
+# print(random.choices(population=myRandList, k=10))  # [16, 18, 10, 7, 0, 10, 12, 18, 9, 15]  - k = # of values
+# SAMPLE without replacement - cannot pick the same number twice
+# print(random.sample(population=myRandList, k=10))
+# SHUFFLE list
+# random.shuffle(myRandList)  # done in place
+# print(myRandList)
+
+#  Distributions
+uniformDistrib = random.uniform(a=0, b=100)
+gauss1 = random.gauss(mu=0, sigma=1)
+
+## Can do more with numpy
